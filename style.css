@@ -469,7 +469,7 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 300px;
+    width: 488px;
     background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(20px);
     border-radius: 1rem;
@@ -488,12 +488,18 @@ body {
 }
 
 .ad-content {
-    padding: 2rem 1rem;
+    padding: 10px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.05);
 }
 
 .ad-placeholder {
     text-align: center;
     color: #64748b;
+    font-size: 0.875rem;
 }
 
 .ad-text {
