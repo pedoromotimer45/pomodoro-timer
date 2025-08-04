@@ -49,3 +49,100 @@
             </div>
             <div class="info-item">
                 <span class="info-label">Focus Time</span>
+                <span id="focus-time" class="info-value">0h 0m</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Status Bars -->
+        <div class="status-bars">
+            <div class="status-bar clock-bar">
+                <div class="status-icon">🕐</div>
+                <div class="status-text">
+                    <span class="status-label">System Clock</span>
+                    <span id="header-time" class="status-value">00:00</span>
+                </div>
+            </div>
+
+            <div class="status-bar timer-bar">
+                <div class="status-icon">⏱️</div>
+                <div class="status-text">
+                    <span class="status-label">Timer Status</span>
+                    <span id="timer-status" class="status-value">Ready</span>
+                </div>
+            </div>
+
+            <div class="status-bar break-bar">
+                <div class="status-icon">☕</div>
+                <div class="status-text">
+                    <span class="status-label">Break Time</span>
+                    <span id="break-status" class="status-value">Waiting</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Central Timer -->
+        <div class="timer-container">
+            <div class="timer-circle">
+                <svg class="progress-ring" width="300" height="300">
+                    <circle class="progress-ring-bg" cx="150" cy="150" r="140"></circle>
+                    <circle class="progress-ring-fill" cx="150" cy="150" r="140"></circle>
+                </svg>
+                
+                <div class="timer-content">
+                    <div id="timer-display" class="timer-display">45:00</div>
+                    <div id="timer-label" class="timer-label">Pomodoro Session</div>
+                    <div class="timer-phase" id="timer-phase">Ready to Start</div>
+                </div>
+            </div>
+
+            <!-- Timer Controls -->
+            <div class="timer-controls">
+                <button id="start-btn" class="control-btn primary">
+                    <span class="btn-icon">▶️</span>
+                    <span class="btn-text">Start</span>
+                </button>
+                <button id="pause-btn" class="control-btn secondary" disabled>
+                    <span class="btn-icon">⏸️</span>
+                    <span class="btn-text">Pause</span>
+                </button>
+                <button id="reset-btn" class="control-btn tertiary">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-text">Reset</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panda Celebration -->
+    <div id="panda-celebration" class="panda-celebration">
+        <div class="panda-container">
+            <div class="panda-emoji">🐼</div>
+            <div class="celebration-text">Great Work!</div>
+            <div class="celebration-subtext">Time for a break!</div>
+            <div class="confetti"></div>
+        </div>
+    </div>
+
+    <!-- Ad Section -->
+    <div id="ad-box" class="ad-section">
+        <div class="ad-header">Advertisement</div>
+        <div class="ad-content">
+            <div class="ad-placeholder">
+                <div class="ad-text">Ad Loading...</div>
+                <div class="ad-subtext">Revenue space</div>
+            </div>
+            <script type='text/javascript' src='//pl27336591.profitableratecpm.com/44/51/a4/4451a43ab994ce6827b16cee37b5745d.js'></script>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="notification-sound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmUUBEGa2+/EdiMFl2+z9tCAVA0PaaLd66hVFAhOouL2u3QjBTyLxfLdh0IIDn+92tb2w3ElBWqyueDY2+XFuVIcBr+y6uhDl/JQFP2tX4XF8diJNwgZaLvv4ZYmAT6Lz+vde0UKF2y27eSPQAoUYaXmtWAJAEqjzfHhm1ELDn/A1dYLKpPT5eBg3r1I=" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
