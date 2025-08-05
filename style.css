@@ -477,6 +477,18 @@ body {
     overflow: hidden;
     z-index: 50;
 }
+.ad-section2 {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 300px;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    overflow: hidden;
+    z-index: 50;
+}
 
 .ad-header {
     padding: 0.75rem 1rem;
