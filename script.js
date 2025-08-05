@@ -446,9 +446,88 @@ class PomodoroTimer {
     }
 }
 
+// Ad Management System
+class AdManager {
+    constructor() {
+        this.adLoaded = false;
+        this.checkAdLoad();
+        this.setupFallbacks();
+    }
+    
+    checkAdLoad() {
+        // Check if primary ads loaded after 5 seconds
+        setTimeout(() => {
+            const adContent = document.querySelector('.ad-content');
+            const hasAds = adContent.querySelector('iframe') || 
+                          adContent.querySelector('ins') || 
+                          adContent.querySelector('[id*="ad"]');
+            
+            if (!hasAds) {
+                console.log('Primary ads blocked, showing fallback');
+                this.showFallback();
+            } else {
+                this.adLoaded = true;
+            }
+        }, 5000);
+    }
+    
+    showFallback() {
+        const fallbackAds = document.getElementById('fallback-ads');
+        const directBanner = document.getElementById('direct-banner');
+        
+        if (fallbackAds) {
+            fallbackAds.style.display = 'block';
+        }
+        
+        // Try alternative ad networks
+        this.loadAlternativeAds();
+    }
+    
+    loadAlternativeAds() {
+        // Method 1: Try different ad network
+        try {
+            const altScript = document.createElement('script');
+            altScript.src = '//alternative-ad-network.com/ads.js';
+            altScript.onerror = () => {
+                console.log('Alternative ad network also blocked');
+                this.showDirectBanner();
+            };
+            document.head.appendChild(altScript);
+        } catch (error) {
+            this.showDirectBanner();
+        }
+    }
+    
+    showDirectBanner() {
+        const directBanner = document.getElementById('direct-banner');
+        if (directBanner) {
+            directBanner.style.display = 'block';
+        }
+    }
+    
+    setupFallbacks() {
+        // Detect VPN/Ad blocker
+        const testAd = document.createElement('div');
+        testAd.innerHTML = '&nbsp;';
+        testAd.className = 'adsbox';
+        testAd.style.position = 'absolute';
+        testAd.style.left = '-9999px';
+        document.body.appendChild(testAd);
+        
+        setTimeout(() => {
+            if (testAd.offsetHeight === 0) {
+                console.log('Ad blocker detected');
+                this.showFallback();
+            }
+            document.body.removeChild(testAd);
+        }, 100);
+    }
+}
+
 // Initialize the timer when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     new PomodoroTimer();
+    new AdManager();
     
     // Add some additional interactive effects
     document.addEventListener('click', (e) => {
